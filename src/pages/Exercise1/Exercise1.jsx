@@ -27,6 +27,10 @@ class Exercise1 extends Component {
 	}
 
 	componentWillMount() {
+		this.getListPokemon()
+	}
+
+	getListPokemon() {
 		axios.get(`https://pokeapi.co/api/v2/pokemon?limit=10`).then(res => {
 			const availableElements = res.data.results.map((item, ix) => {
 				return {
